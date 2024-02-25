@@ -1,0 +1,103 @@
+.body-class {
+  background-color: #f5f5f5;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.header-class {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.nav-class {
+  background-color: #444;
+  padding: 10px;
+  text-align: center;
+}
+
+.nav-link-class {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.nav-link-class:hover {
+  font-weight: bold;
+}
+
+.title-class, .section-title-class {
+  color: #000080;
+  text-align: center;
+}
+
+.text-class {
+  color: #555;
+}
+
+.image-class {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  max-width: 100%;
+  height: auto;
+}
+
+.form-class {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.label-class {
+  font-weight: bold;
+}
+
+.input-class, .button-class {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button-class {
+  background-color: #0099ff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-class:hover {
+  background-color: #0077cc;
+}
+
+.footer-class {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.contact-section-class {
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .header-class {
+    padding: 10px;
+  }
+  .nav-class {
+    padding: 5px;
+  }
+  .nav-link-class {
+    padding: 3px 6px;
+  }
+  .button-class {
+    padding: 8px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .nav-link-class {
+    display: block;
+    margin: 5px;
+  }
+}
