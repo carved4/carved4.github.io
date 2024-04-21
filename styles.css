@@ -1,103 +1,109 @@
-.body-class {
-  background-color: #f5f5f5;
-  font-family: 'Helvetica Neue', sans-serif;
-  color: #333;
-  line-height: 1.6;
+/* Reset Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.header-class {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
 }
 
-.nav-class {
-  background-color: #444;
-  padding: 10px;
-  text-align: center;
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-.nav-link-class {
-  color: #fff;
-  text-decoration: none;
-  padding: 5px 10px;
+nav {
+    background-color: #444;
+    padding: 10px 0;
+    text-align: center;
 }
 
-.nav-link-class:hover {
-  font-weight: bold;
+nav ul {
+    list-style-type: none;
 }
 
-.title-class, .section-title-class {
-  color: #000080;
-  text-align: center;
+nav ul li {
+    display: inline;
+    margin-right: 20px;
 }
 
-.text-class {
-  color: #555;
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.image-class {
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  max-width: 100%;
-  height: auto;
+nav ul li a:hover {
+    color: #ccc;
 }
 
-.form-class {
-  margin-bottom: 20px;
-  text-align: center;
+main {
+    padding: 20px;
 }
 
-.label-class {
-  font-weight: bold;
-}
-
-.input-class, .button-class {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.button-class {
-  background-color: #0099ff;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.button-class:hover {
-  background-color: #0077cc;
-}
-
-.footer-class {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-}
-
-.contact-section-class {
-  text-align: center;
-}
-
-@media only screen and (max-width: 768px) {
-  .header-class {
+footer {
+    background-color: #333;
+    color: white;
     padding: 10px;
-  }
-  .nav-class {
-    padding: 5px;
-  }
-  .nav-link-class {
-    padding: 3px 6px;
-  }
-  .button-class {
-    padding: 8px;
-  }
+    text-align: center;
 }
 
-@media only screen and (max-width: 480px) {
-  .nav-link-class {
-    display: block;
-    margin: 5px;
-  }
+/* Button Styles */
+button, button a {
+    background-color: #444;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button a {
+    color: white;
+}
+
+button:hover, button a:hover {
+    background-color: #555;
+}
+
+/* Hyperlink Styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Charity Styles */
+.charity {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.charity h3 {
+    color: #333;
+}
+
+.charity p {
+    color: #666;
 }

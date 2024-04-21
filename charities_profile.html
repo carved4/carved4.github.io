@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub - Charity Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Google Maps API script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAbrbZ-UahsrnRa0EBpq01odiCfjjo3O0&callback=initMap" async defer></script>
+    <!-- Include charities_profile.js script -->
+    <script src="charities_profile.js"></script>
+    <style>
+        /* Style for the map container */
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Charity Profile</h1>
+        <p>Information about the selected charity.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="charities.html">Charities</a></li>
+            <li><a href="charities_profile.html">Charity Profiles</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Associated Charities of Lenawee County</h2>
+        <p>Description of Associated Charities of Lenawee County.</p>
+        <p>Contact: John Doe</p>
+        <p>Email: john.doe@example.com</p>
+        <p>Phone: 123-456-7890</p>
+        <button id="volunteerBtn">Volunteer Now</button>
+        <div id="volunteerForm" style="display: none;">
+            <h3>Volunteer Form</h3>
+            <form id="volunteerFormElement">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <!-- User input for location -->
+        <label for="location">Enter your location:</label>
+        <input type="text" id="location" name="location">
+        <button onclick="showLocation()">Show Map</button>
+        <!-- Map container -->
+        <div id="map"></div>
+        <div id="additionalInfo">
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 HelpHub. All rights reserved.</p>
+    </footer>
+    <script>
+        // Initialize and display the map
+        function initMap() {
+            // Default location (e.g., center of the world)
+            var defaultLocation = {lat: 0, lng: 0};
+            // Create a new map centered at the default location
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10, // Adjust the zoom level as needed
+                center: defaultLocation
+            });
+        }
+
+        // Function to show the user's location on the map
+        function showLocation() {
+            // Retrieve user input for location
+            var address = document.getElementById("location").value;
+            // Perform geocoding request to convert address to coordinates
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ address: address }, function(results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                    // Get latitude and longitude coordinates of the location
+                    var location = results[0].geometry.location;
+                    // Create a new map centered at the user's location
+                    var map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 10, // Adjust the zoom level as needed
+                        center: location
+                    });
+                    // Add a marker at the user's location
+                    var marker = new google.maps.Marker({
+                        position: location,
+                        map: map
+                    });
+                } else {
+                    // Handle geocoding error
+                    alert("Geocode was not successful for the following reason: " + status);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
